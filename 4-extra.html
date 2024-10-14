@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>O que eu gostaria de ter aprendido antes &#8212; Minicurso de Machine Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4-extra';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Medidas de desempenho em classificação" href="3-Avaliacao.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0-summary.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Minicurso de Machine Learning - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Minicurso de Machine Learning - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="0-summary.html">
+                    Minicurso de Machine Learning
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1-dados.html">Etapas Básicas de um Projeto de Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-modelos.html">Modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_2-Resumo.html">Resumo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-Avaliacao.html">Medidas de desempenho em classificação</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">O que eu gostaria de ter aprendido antes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/thiagorr162/mini_ml" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/thiagorr162/mini_ml/issues/new?title=Issue%20on%20page%20%2F4-extra.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/4-extra.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>O que eu gostaria de ter aprendido antes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-controle-de-versao-distribuido">Git: Controle de Versão Distribuído</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-git">O que é Git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-git">Por que usar Git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos-do-git">Comandos Básicos do Git</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-gerenciador-de-dependencias-e-pacotes-para-python">Poetry: Gerenciador de Dependências e Pacotes para Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-o-poetry">O que é o Poetry?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-poetry">Por que usar Poetry?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacao-do-poetry">Instalação do Poetry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-principais-do-poetry">Comandos Principais do Poetry</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao-ao-terminal-linux">Introdução ao Terminal Linux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos-do-terminal-linux">Comandos Básicos do Terminal Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos-de-ssh">Comandos Básicos de SSH</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ferramentas-de-formatacao-e-organizacao-de-codigo">Ferramentas de Formatação e Organização de Código</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black">Black</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas">Características:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#como-usar">Como usar:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">Isort</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Características:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Como usar:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8">Flake8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Como usar:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-hooks">Pre-commit Hooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Como usar:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="o-que-eu-gostaria-de-ter-aprendido-antes">
+<h1>O que eu gostaria de ter aprendido antes<a class="headerlink" href="#o-que-eu-gostaria-de-ter-aprendido-antes" title="Link to this heading">#</a></h1>
+<section id="git-controle-de-versao-distribuido">
+<h2>Git: Controle de Versão Distribuído<a class="headerlink" href="#git-controle-de-versao-distribuido" title="Link to this heading">#</a></h2>
+<section id="o-que-e-git">
+<h3>O que é Git?<a class="headerlink" href="#o-que-e-git" title="Link to this heading">#</a></h3>
+<p><strong>Git</strong> é um sistema de controle de versão distribuído amplamente utilizado para gerenciar o desenvolvimento de projetos, especialmente em software. Ele permite que vários desenvolvedores trabalhem simultaneamente no mesmo projeto, rastreando alterações feitas nos arquivos e facilitando a colaboração.</p>
+<p>Com Git, é possível criar um histórico completo das modificações feitas em cada arquivo, reverter mudanças, criar ramificações (branches) de código para diferentes funcionalidades, e muito mais.</p>
+</section>
+<hr class="docutils" />
+<section id="por-que-usar-git">
+<h3>Por que usar Git?<a class="headerlink" href="#por-que-usar-git" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Histórico de Alterações</strong>: Git mantém um registro completo de todas as alterações feitas nos arquivos de um projeto, permitindo revisitar versões antigas.</p></li>
+<li><p><strong>Colaboração</strong>: Em grandes projetos, Git facilita a colaboração entre vários desenvolvedores, permitindo que cada um trabalhe em diferentes funcionalidades sem conflitos.</p></li>
+<li><p><strong>Branches</strong>: Git permite criar e gerenciar ramificações do código (branches), permitindo o desenvolvimento paralelo de diferentes funcionalidades sem interferência no código principal.</p></li>
+<li><p><strong>Controle de Versão Distribuído</strong>: Cada desenvolvedor tem uma cópia completa do repositório, tornando o desenvolvimento mais ágil e menos dependente de um único servidor central.</p></li>
+</ul>
+</section>
+<section id="comandos-basicos-do-git">
+<h3>Comandos Básicos do Git<a class="headerlink" href="#comandos-basicos-do-git" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>git init</strong>: Inicializa um novo repositório Git no diretório atual.</p></li>
+<li><p><strong>git clone [URL]</strong>: Clona um repositório remoto para o seu ambiente local.</p></li>
+<li><p><strong>git add [arquivo]</strong>: Adiciona o arquivo especificado à staging area.</p></li>
+<li><p><strong>git add .</strong>: Adiciona todos os arquivos modificados à staging area.</p></li>
+<li><p><strong>git commit -m “[mensagem]”</strong>: Cria um commit com uma mensagem descritiva das alterações.</p></li>
+<li><p><strong>git status</strong>: Mostra o estado atual do repositório, incluindo quais arquivos foram modificados e estão prontos para commit.</p></li>
+<li><p><strong>git log</strong>: Exibe o histórico de commits do repositório.</p></li>
+<li><p><strong>git push</strong>: Envia os commits do branch atual para o repositório remoto.</p></li>
+<li><p><strong>git pull]</strong>: Puxa as últimas alterações do repositório remoto para o branch atual.</p></li>
+</ul>
+</section>
+</section>
+<section id="poetry-gerenciador-de-dependencias-e-pacotes-para-python">
+<h2>Poetry: Gerenciador de Dependências e Pacotes para Python<a class="headerlink" href="#poetry-gerenciador-de-dependencias-e-pacotes-para-python" title="Link to this heading">#</a></h2>
+<section id="o-que-e-o-poetry">
+<h3>O que é o Poetry?<a class="headerlink" href="#o-que-e-o-poetry" title="Link to this heading">#</a></h3>
+<p><strong>Poetry</strong> é uma ferramenta de gerenciamento de dependências e ambientes em Python, que também facilita o empacotamento e distribuição de projetos. Ele permite que você gerencie as bibliotecas de que seu projeto depende, crie ambientes virtuais automaticamente e publique pacotes com facilidade.</p>
+<p>Enquanto outras ferramentas como <strong>pip</strong> e <strong>virtualenv</strong> também gerenciam pacotes, o Poetry se destaca por simplificar o processo e oferecer um arquivo centralizado para dependências e metadados do projeto.</p>
+</section>
+<hr class="docutils" />
+<section id="por-que-usar-poetry">
+<h3>Por que usar Poetry?<a class="headerlink" href="#por-que-usar-poetry" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Gestão de Dependências Simplificada</strong>: O Poetry centraliza todas as dependências do projeto no arquivo <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, eliminando a necessidade de um arquivo <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> separado.</p></li>
+<li><p><strong>Ambientes Virtuais Automáticos</strong>: Ele cria automaticamente um ambiente virtual para o projeto, isolando as dependências do sistema global.</p></li>
+<li><p><strong>Publicação de Pacotes</strong>: Facilita a criação, construção e publicação de pacotes Python.</p></li>
+<li><p><strong>Resolução Automática de Dependências</strong>: O Poetry resolve automaticamente versões conflitantes de dependências, garantindo que todas as bibliotecas funcionem bem juntas.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="instalacao-do-poetry">
+<h3>Instalação do Poetry<a class="headerlink" href="#instalacao-do-poetry" title="Link to this heading">#</a></h3>
+<p>Você pode instalar o Poetry com o seguinte comando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://install.python-poetry.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-
+</pre></div>
+</div>
+</section>
+<section id="comandos-principais-do-poetry">
+<h3>Comandos Principais do Poetry<a class="headerlink" href="#comandos-principais-do-poetry" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>poetry init</strong>: Inicializa um novo projeto Python e cria o arquivo <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> para gerenciar dependências.</p></li>
+<li><p><strong>poetry install</strong>: Instala todas as dependências listadas no arquivo <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> e cria um ambiente virtual, se necessário.</p></li>
+<li><p><strong>poetry add [nome_da_dependencia]</strong>: Adiciona uma nova dependência ao projeto e atualiza o arquivo <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p></li>
+<li><p><strong>poetry update</strong>: Atualiza todas as dependências do projeto para suas versões mais recentes compatíveis.</p></li>
+<li><p><strong>poetry shell</strong>: Entra no ambiente virtual do projeto para rodar comandos diretamente.</p></li>
+<li><p><strong>poetry remove [nome_da_dependencia]</strong>: Remove uma dependência do projeto e atualiza o arquivo <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="introducao-ao-terminal-linux">
+<h2>Introdução ao Terminal Linux<a class="headerlink" href="#introducao-ao-terminal-linux" title="Link to this heading">#</a></h2>
+<p>O <strong>Terminal Linux</strong> é uma interface de linha de comando (CLI) que permite ao usuário interagir diretamente com o sistema operacional por meio de comandos. Ele é uma ferramenta poderosa para desenvolvedores e administradores de sistemas, permitindo automatizar tarefas, navegar por diretórios e gerenciar arquivos de forma eficiente.</p>
+<p>Existem infinitos comandos impor</p>
+<section id="comandos-basicos-do-terminal-linux">
+<h3>Comandos Básicos do Terminal Linux<a class="headerlink" href="#comandos-basicos-do-terminal-linux" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>ls</strong>: Lista os arquivos e diretórios no diretório atual.</p></li>
+<li><p><strong>cd [diretório]</strong>: Navega para o diretório especificado.</p></li>
+<li><p><strong>pwd</strong>: Mostra o caminho do diretório atual.</p></li>
+<li><p><strong>mkdir [nome]</strong>: Cria um novo diretório.</p></li>
+<li><p><strong>rm [arquivo]</strong>: Remove um arquivo. Para remover diretórios, use <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span></code>.</p></li>
+<li><p><strong>cp [origem] [destino]</strong>: Copia arquivos ou diretórios de um local para outro.</p></li>
+<li><p><strong>mv [origem] [destino]</strong>: Move ou renomeia arquivos ou diretórios.</p></li>
+<li><p><strong>cat [arquivo]</strong>: Exibe o conteúdo de um arquivo no terminal.</p></li>
+<li><p><strong>touch [nome]</strong>: Cria um arquivo vazio ou atualiza a data de um arquivo existente.</p></li>
+<li><p><strong>man [comando]</strong>: Exibe o manual de um comando.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="comandos-basicos-de-ssh">
+<h3>Comandos Básicos de SSH<a class="headerlink" href="#comandos-basicos-de-ssh" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>ssh [usuario&#64;servidor]</strong>: Conecta a um servidor remoto via SSH.</p></li>
+<li><p><strong>scp [arquivo] [usuario&#64;servidor:/destino]</strong>: Copia arquivos locais para um servidor remoto.</p></li>
+<li><p><strong>scp [usuario&#64;servidor:/arquivo] [destino_local]</strong>: Copia arquivos de um servidor remoto para o computador local.</p></li>
+<li><p><strong>ssh-keygen</strong>: Gera uma chave SSH para autenticação sem senha em servidores.</p></li>
+<li><p><strong>ssh-copy-id [usuario&#64;servidor]</strong>: Adiciona sua chave SSH ao servidor remoto para login sem senha.</p></li>
+</ul>
+</section>
+</section>
+<section id="ferramentas-de-formatacao-e-organizacao-de-codigo">
+<h2>Ferramentas de Formatação e Organização de Código<a class="headerlink" href="#ferramentas-de-formatacao-e-organizacao-de-codigo" title="Link to this heading">#</a></h2>
+<section id="black">
+<h3>Black<a class="headerlink" href="#black" title="Link to this heading">#</a></h3>
+<p><strong>Black</strong> é uma ferramenta de formatação automática de código Python, que garante que o código siga um estilo consistente e conforme as convenções do PEP 8. Ele automatiza o processo de formatação, economizando tempo e esforço para desenvolvedores.</p>
+<section id="caracteristicas">
+<h4>Características:<a class="headerlink" href="#caracteristicas" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Formatação automática</strong>: Black reescreve o código para que siga padrões consistentes.</p></li>
+<li><p><strong>Estilo PEP 8</strong>: Garante que o código esteja de acordo com as diretrizes do Python.</p></li>
+<li><p><strong>Velocidade</strong>: É conhecido por sua eficiência na formatação de projetos grandes.</p></li>
+</ul>
+</section>
+<section id="como-usar">
+<h4>Como usar:<a class="headerlink" href="#como-usar" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>Instalar o Black:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>black
+</pre></div>
+</div>
+</li>
+<li><p>Para formatar arquivos:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>black<span class="w"> </span>nome_do_arquivo.py
+</pre></div>
+</div>
+</li>
+<li><p>Para verificar apenas o formato sem alterar o código:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>black<span class="w"> </span>--check<span class="w"> </span>nome_do_arquivo.py
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="isort">
+<h3>Isort<a class="headerlink" href="#isort" title="Link to this heading">#</a></h3>
+<p><strong>Isort</strong> é uma ferramenta que organiza automaticamente as importações no seu código Python. Ele agrupa e ordena as importações de forma consistente, ajudando a manter um código mais limpo e organizado.</p>
+<section id="id1">
+<h4>Características:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Organização de importações</strong>: Agrupa as importações de bibliotecas padrão, pacotes externos e locais em seções distintas.</p></li>
+<li><p><strong>Facilidade de uso</strong>: Automatiza a organização das importações sem necessidade de intervenção manual.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h4>Como usar:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>Instalar o Isort:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>isort
+</pre></div>
+</div>
+</li>
+<li><p>Para organizar as importações em um arquivo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>isort<span class="w"> </span>nome_do_arquivo.py
+</pre></div>
+</div>
+</li>
+<li><p>Para verificar apenas a organização das importações sem alterar o código:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>isort<span class="w"> </span>--check<span class="w"> </span>nome_do_arquivo.py
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="flake8">
+<h3>Flake8<a class="headerlink" href="#flake8" title="Link to this heading">#</a></h3>
+<p><strong>Flake8</strong> é uma ferramenta de linting que verifica o código Python em busca de erros de sintaxe, formatação e boas práticas, de acordo com o PEP 8. Ele ajuda a garantir que o código esteja limpo e bem escrito.</p>
+<section id="id3">
+<h4>Como usar:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>Instalar o Flake8:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>flake8
+</pre></div>
+</div>
+</li>
+<li><p>Para verificar erros de estilo em um arquivo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>flake8<span class="w"> </span>nome_do_arquivo.py
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pre-commit-hooks">
+<h3>Pre-commit Hooks<a class="headerlink" href="#pre-commit-hooks" title="Link to this heading">#</a></h3>
+<p><strong>Pre-commit</strong> é uma ferramenta que permite configurar verificações automáticas (hooks) que são executadas antes de cada commit no Git. Ela garante que o código esteja formatado e verificado antes de ser enviado ao repositório.</p>
+<section id="id4">
+<h4>Como usar:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>Instalar o Pre-commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+</pre></div>
+</div>
+</li>
+<li><p>Criar o arquivo de configuração <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/psf/black</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">21.9b0</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pre-commit/mirrors-isort</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v5.9.3</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span>
+</pre></div>
+</div>
+</li>
+<li><p>Instalar os hooks:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Agora, sempre que você fizer um commit, o Black e o Isort serão executados automaticamente para formatar e organizar o código.</p>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="3-Avaliacao.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Medidas de desempenho em classificação</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-controle-de-versao-distribuido">Git: Controle de Versão Distribuído</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-git">O que é Git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-git">Por que usar Git?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos-do-git">Comandos Básicos do Git</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-gerenciador-de-dependencias-e-pacotes-para-python">Poetry: Gerenciador de Dependências e Pacotes para Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-o-poetry">O que é o Poetry?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-poetry">Por que usar Poetry?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacao-do-poetry">Instalação do Poetry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-principais-do-poetry">Comandos Principais do Poetry</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao-ao-terminal-linux">Introdução ao Terminal Linux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos-do-terminal-linux">Comandos Básicos do Terminal Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos-de-ssh">Comandos Básicos de SSH</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ferramentas-de-formatacao-e-organizacao-de-codigo">Ferramentas de Formatação e Organização de Código</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black">Black</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas">Características:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#como-usar">Como usar:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">Isort</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Características:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Como usar:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8">Flake8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Como usar:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-hooks">Pre-commit Hooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Como usar:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Thiago Rodrigo Ramos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
