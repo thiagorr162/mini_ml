@@ -1,19 +1,21 @@
 [tool.poetry]
-name = "mini_ml"
+name = "prog-stat"
 version = "0.1.0"
-description = "Use this config file as template for your project."
+description = "Jupyter Book para disciplina de programação estatística"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+jupyter-book = "^1.0.2"
+pandas = "^2.2.3"
+matplotlib = "^3.9.2"
+numpy = "^2.1.1"
+ghp-import = "^2.1.0"
 jupyterlab = "^4.2.5"
 notebook = "^7.2.2"
-matplotlib = "^3.9.2"
-pandas = "^2.2.3"
-numpy = "^2.1.1"
-seaborn = "^0.13.2"
 scikit-learn = "^1.5.2"
+seaborn = "^0.13.2"
 
 [tool.black]
 line-length = 120
