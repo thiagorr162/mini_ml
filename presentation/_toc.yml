@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: 0-summary
+chapters:
+- file: 1-dados
+- file: 2-modelos
+- file: 3_2-Resumo
+- file: 3-Avaliacao
+- file: 4-extra
